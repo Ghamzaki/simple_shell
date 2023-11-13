@@ -29,8 +29,12 @@ typedef struct command
 typedef void (*CommandHandler)(command *);
 
 	/*func. string*/
+int _strlen(const char *s);
 void _printf(const char *c);
+char *_strcpy(char *dest, char *src);
+char *_strdup(const char *str);
 char *_strtok(char *str, const char *delimiter);
+
 	/*func. shell*/
 void print_prompt(void);
 void read_input(command *cmd);

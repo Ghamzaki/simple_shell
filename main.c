@@ -1,5 +1,10 @@
 #include "shell.h"
 
+/**
+ * main - Entry point
+ *
+ * Return: void
+ */
 int main(void)
 {
 	command cmd;

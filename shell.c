@@ -35,14 +35,14 @@ void read_input(command *cmd)
 
 	while (token != NULL && cmd->num_args < MAX_ARGS)
 	{
-		cmd->args[cmd->num_args] = strdup(token);
+		cmd->args[cmd->num_args] = _strdup(token);
 		token = _strtok(NULL, " ");
 		cmd->num_args++;
 	}
 
 	if (cmd->num_args > 0)
 	{
-		strcpy(cmd->command, cmd->args[0]);
+		_strcpy(cmd->command, cmd->args[0]);
 		cmd->args[cmd->num_args] = NULL;
 	}
 }
