@@ -8,22 +8,18 @@
 int main(void)
 {
 	command cmd;
-	int i;
 
 	while (1)
 	{
 		print_prompt();
 		read_input(&cmd);
 
-		if (cmd.num_args > 0)
+		if (_strcmp(cmd.command, "exit") == 0)
 		{
-			execute_command(&cmd);
+			break;
 		}
 
-		for (i = 0; i < cmd.num_args; i++)
-		{
-			free(cmd.args[i]);
-		}
+		execute_command(&cmd);
 	}
 	return (0);
 }

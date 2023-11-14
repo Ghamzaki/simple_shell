@@ -11,7 +11,7 @@
 #define MAX_ARGS 64
 
 /**
- * struct Command - Represents a command with its arguments.
+ * struct command - Represents a command with its arguments.
  *
  * @command: A character array storing the command itself.
  * @args: An An array of character pointers storing the
@@ -26,14 +26,19 @@ typedef struct command
 	int num_args;
 } command;
 
-typedef void (*CommandHandler)(command *);
-
 	/*func. string*/
 int _strlen(const char *s);
 void _printf(const char *c);
 char *_strcpy(char *dest, char *src);
 char *_strdup(const char *str);
 char *_strtok(char *str, const char *delimiter);
+
+	/*func. prompt*/
+void execute_command(command *cmd);
+void execute_cwd(command *cmd);
+void execute_path(command *cmd, char *path);
+void cmd_notfound(const char *command);
+int _strcmp(char *s1, char *s2);
 
 	/*func. shell*/
 void print_prompt(void);
