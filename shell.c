@@ -3,7 +3,7 @@
 /**
  * execute_command - Execute a command in both current dir. and path
  * @cmd: A pointer struct containing the command and its args.
- * @program_name: ll
+ * @program_name: name of the shell program.
  */
 void execute_command(command *cmd, const char *program_name)
 {
@@ -107,7 +107,7 @@ void execute_path(command *cmd, char *path)
 /**
  * cmd_notfound - If comand is not found
  * @command: command which was not found
- * @program_name: ll
+ * @program_name: name of the shell program
  */
 void cmd_notfound(const char *command, const char *program_name)
 {

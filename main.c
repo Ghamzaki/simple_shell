@@ -2,9 +2,10 @@
 
 /**
  * main - Entry point
- * @argc: ll
- * @argv: ll
- * Return: void
+ * @argc: The number of command-line arguments.
+ * @argv: array containing the command-line arguments.
+ *
+ * Return: Always void (success).
  */
 int main(int argc, char **argv)
 {
