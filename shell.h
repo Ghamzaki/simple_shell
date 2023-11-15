@@ -26,23 +26,21 @@ typedef struct command
 	int num_args;
 } command;
 
-	/*func. string*/
+	/*func. string.c*/
 int _strlen(const char *s);
 void _printf(const char *c);
 char *_strcpy(char *dest, char *src);
 char *_strdup(const char *str);
 char *_strtok(char *str, const char *delimiter);
 
-	/*func. prompt*/
-void execute_command(command *cmd);
+	/*func. shell.c*/
+void execute_command(command *cmd, const char *program_name);
 void execute_cwd(command *cmd);
 void execute_path(command *cmd, char *path);
-void cmd_notfound(const char *command);
-int _strcmp(char *s1, char *s2);
+void cmd_notfound(const char *command, const char *program_name);
 
-	/*func. shell*/
+	/*func. prompt.c*/
 void print_prompt(void);
 void read_input(command *cmd);
-void execute_command(command *cmd);
-
+int _strcmp(char *s1, char *s2);
 #endif

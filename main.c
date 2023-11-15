@@ -2,12 +2,16 @@
 
 /**
  * main - Entry point
- *
+ * @argc: ll
+ * @argv: ll
  * Return: void
  */
-int main(void)
+int main(int argc, char **argv)
 {
 	command cmd;
+	const char *program_name = (argc > 0) ? argv[0] : "";
+
+	(void)argc;
 
 	while (1)
 	{
@@ -19,7 +23,7 @@ int main(void)
 			break;
 		}
 
-		execute_command(&cmd);
+		execute_command(&cmd, program_name);
 	}
 	return (0);
 }

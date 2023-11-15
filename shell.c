@@ -3,9 +3,9 @@
 /**
  * execute_command - Execute a command in both current dir. and path
  * @cmd: A pointer struct containing the command and its args.
- *
+ * @program_name: ll
  */
-void execute_command(command *cmd)
+void execute_command(command *cmd, const char *program_name)
 {
 	char *path, *token;
 
@@ -27,7 +27,7 @@ void execute_command(command *cmd)
 			execute_path(cmd, token);
 			token = strtok(NULL, ":");
 		}
-		cmd_notfound(cmd->command);
+		cmd_notfound(cmd->command, program_name);
 	}
 }
 
@@ -107,9 +107,9 @@ void execute_path(command *cmd, char *path)
 /**
  * cmd_notfound - If comand is not found
  * @command: command which was not found
- *
+ * @program_name: ll
  */
-void cmd_notfound(const char *command)
+void cmd_notfound(const char *command, const char *program_name)
 {
-	 fprintf(stderr, "Error: Command not found: %s\n", command);
+	 fprintf(stderr, "%s: 1: %s: not found\n", program_name, command);
 }
